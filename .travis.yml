@@ -1,25 +1,19 @@
-os:
- - linux
-services: 
- - docker
- 
 language: java
+jdk:
+  - oraclejdk11
+language:
+  java
 
 cache:
-	directories:
-		- node
-		- node_modules
-		- $HOME/.m2
-		
-env:
-	global:
-		- SPRING_OUTPUT_ANSI_ENABLE=ALWAYS
-		- SPRING_JPA_SHOW_SQL=false
-		- MAVEN_USER_HOME=$HOME/.m2/repository
-matrix:
-	- TRAVIS_JDK=adpt-openj9@1.11.0-4
-	
-script:
-	- chmod +x mvnw
-	- java -version
-	- ./mvnw -ntp checkstyle:check
+  directories:
+  - $HOME/.m2
+
+before_script:
+  - pip install --user codecov
+
+after_success:
+  - codecov
+before_install:
+  - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+install: true
+script: ./mvnw clean install
