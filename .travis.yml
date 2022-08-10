@@ -10,5 +10,5 @@ before_script:
 after_success:
   - codecov
 before_install:
-  - mvn compile -DskipTests=true -U 
+  - mvn compile
 install: mvn test
