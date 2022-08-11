@@ -25,6 +25,7 @@ before_install:
   - docker push nhanh01/myapp
 install: true
 deploy:
+  skip_cleanup: true
   provider: elasticbeanstalk
   region: 'us-east-1'
   app: 'Docker-react'
