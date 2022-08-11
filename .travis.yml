@@ -19,5 +19,6 @@ after_success:
 before_install:
   - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
   - docker build -t nhanh01/myapp .
+  - docker run nhanh01/myapp
 install: true
 script: ./mvnw clean install
