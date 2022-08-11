@@ -19,7 +19,7 @@ after_success:
 before_install:
   - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
   - docker build -t nhanh01/myapp .
-  - docker run nhanh01/myapp
+
 # login to docker hub
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push nhanh01/myapp
