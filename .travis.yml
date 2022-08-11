@@ -4,6 +4,9 @@ jdk:
 language:
   java
 
+services:
+  - docker
+
 cache:
   directories:
   - $HOME/.m2
@@ -15,5 +18,6 @@ after_success:
   - codecov
 before_install:
   - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - docker build -t nhanh01/myapp
 install: true
 script: ./mvnw clean install
