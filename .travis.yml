@@ -28,8 +28,8 @@ deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
   region: 'us-east-1'
-  app: 'Docker-react'
-  env: 'Dockerreact-env'
+  app: 'multiple-container'
+  env: 'multiplecontainer-env'
   bucket_name: 'elasticbeanstalk-us-east-1-492397774841'
   bucket_path: 'docker-multi'
   on:
