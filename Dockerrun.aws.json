@@ -1,7 +1,7 @@
 {
     "AWSEBDockerrunVersion": "1",
     "Image": {
-        "Name": "nhanh01/myapp:latest",
+        "Name": "nhanh01/myapp",
         "Update": "true"
     },
     "Ports": [
